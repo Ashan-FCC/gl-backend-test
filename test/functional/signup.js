@@ -15,12 +15,8 @@ describe('POST /signup - Register Users', () => {
     ])
   })
 
-  it('should fail if the required params are missing', function() {
-    const context = {
-      body: {
-        email: 'tester@test.com'
-      }
-    }
+  it('should fail if the required params are missing', function () {
+
     return request(server)
       .post('/signup')
       .send({first_name: 'john'})
@@ -28,7 +24,7 @@ describe('POST /signup - Register Users', () => {
 
   })
 
-  it('should sign user up if params are present', function() {
+  it('should sign user up if params are present', function () {
     const context = {
       body: {
         email: 'tester@test.com',

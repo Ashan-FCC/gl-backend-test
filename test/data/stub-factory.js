@@ -1,9 +1,6 @@
 'use strict'
 
-const _ = require('lodash')
-
-
-module.exports = function initialize(systemCode, knex, loader) {
+module.exports = function initialize(systemCode, knex) {
 
   return function createStubLoader(tableName) {
     return {

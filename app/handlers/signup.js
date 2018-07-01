@@ -32,9 +32,9 @@ function signup(req, res, next) {
     .then(id => {
       const token = createJWT(email, id)
       res.send(201, {
-        message: "User Created",
+        message: 'User Created',
         token
-      });
+      })
       return next()
     })
     .catch(err => {

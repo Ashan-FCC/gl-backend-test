@@ -21,13 +21,12 @@ function login(req, res, next) {
       if (result) {
         const token = createJWT(currentUser.email, currentUser.id)
         res.send(200, {
-          message: "Login successful",
+          message: 'Login successful',
           token
-        });
+        })
         return next()
-      } else {
-        throw new AuthFailed('Auth failed. Incorrect username or password')
       }
+      throw new AuthFailed('Auth failed. Incorrect username or password')
     })
     .catch(err => {
       return next(err)

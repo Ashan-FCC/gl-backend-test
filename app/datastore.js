@@ -32,7 +32,6 @@ function initializeMysqlConnection(dbUrl) {
 
   knexInstance.client.pool.acquire((err, client) => {
     if (err) {
-      logger.error(err)
       process.emit('terminate', `Mysql connection error:${urlParams.host}`)
     } else {
       knexInstance.client.pool.release(client)

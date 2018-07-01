@@ -14,19 +14,14 @@ describe('POST /login - Register Users', () => {
     ])
   })
 
-  it('should fail if the required params are missing', function() {
-    const context = {
-      body: {
-        email: 'tester@test.com'
-      }
-    }
+  it('should fail if the required params are missing', function () {
     return request(server)
       .post('/login')
       .send({email: 'john'})
       .expect(400)
   })
 
-  it('should log the user in', function() {
+  it('should log the user in', function () {
     const signupContext = {
       body: {
         email: 'tester@test.com',
