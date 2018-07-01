@@ -6,7 +6,7 @@ require('should')
 const data = require('../data/index')
 const server = require('../../app/server')
 
-describe('POST /login - Register Users', () => {
+describe('POST /login - Login Users', () => {
 
   beforeEach(() => {
     return Promise.all([
