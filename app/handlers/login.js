@@ -24,7 +24,6 @@ function login(req, res, next) {
           message: "Login successful",
           token
         });
-        console.log(token)
         return next()
       } else {
         throw new AuthFailed('Auth failed. Incorrect username or password')
