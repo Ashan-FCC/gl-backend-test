@@ -15,6 +15,14 @@ module.exports = {
       _connections.userData = initializeMysqlConnection(process.env.MYSQL_CONNECTION)
     }
     return _connections.userData
+  },
+
+  dispose() {
+    if (_connections.userData) {
+      _connections.userData.client.pool.drain(function () {
+        _connections.userData.client.pool.destroyAllNow()
+      })
+    }
   }
 }
 
