@@ -42,16 +42,17 @@ describe('POST /login - Register Users', () => {
         password: 'tester12'
       }
     }
+
     return request(server)
       .post('/signup')
       .send(signupContext.body)
       .expect(201)
       .then(() => {
-        request(server)
+        return request(server)
           .post('/login')
           .send(loginContext.body)
           .expect(200)
-          .end((err, res) => {
+          .then(res => {
             res.body.should.have.property('token').which.is.a.String()
           })
       })
