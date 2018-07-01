@@ -1,7 +1,7 @@
 version: '2'
 services:
   mysql:
-    image: getlinks_test
+    image: ashanperera/getlinks_test
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
   app:
